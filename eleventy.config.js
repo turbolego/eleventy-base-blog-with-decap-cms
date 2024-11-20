@@ -19,16 +19,8 @@ export default async function (eleventyConfig) {
 	eleventyConfig
 		.addPassthroughCopy({
 			"./public/": "/",
-			"./admin/": "/admin/",  // Add this line to copy the admin folder
-			"./public/img/uploads": "/img/uploads"  // Add this line
-		})
-		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
-
-	// Copy the contents of the `public` folder to the output folder
-	// For example, `./public/css/` ends up in `_site/css/`
-	eleventyConfig
-		.addPassthroughCopy({
-			"./public/": "/"
+			"./admin/": "/admin/", // Add this line to copy the admin folder
+			"./public/img/uploads/": "/img/uploads/"  // Updated path for image uploads
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
@@ -37,6 +29,7 @@ export default async function (eleventyConfig) {
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+	eleventyConfig.addWatchTarget("public/img/uploads/**/*.{svg,webp,png,jpeg}"); // Add watch for uploaded images
 
 	// Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
 	// Adds the {% css %} paired shortcode
@@ -97,18 +90,31 @@ export default async function (eleventyConfig) {
 			decoding: "async",
 		},
 		urlPath: process.env.GITHUB_ACTIONS 
-            ? "/eleventy-base-blog/img/uploads/"
-            : "/img/uploads/",
-        outputDir: "_site/img/uploads/"
+			? "/eleventy-base-blog/img/uploads/"
+			: "/img/uploads/",
+		outputDir: "_site/img/uploads/",
+		directories: {
+			source: "public/img/uploads",
+			output: "_site/img/uploads"
+		}
 	});
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
 
-	eleventyConfig.addPlugin(IdAttributePlugin, {
-		// by default we use Eleventy’s built-in `slugify` filter:
-		// slugify: eleventyConfig.getFilter("slugify"),
-		// selector: "h1,h2,h3,h4,h5,h6", // default
+	eleventyConfig.addPlugin(IdAttributePlugin);
+
+	// Add filter to fix image paths in markdown content
+	eleventyConfig.addFilter("fixImagePath", (content) => {
+		if (typeof content !== 'string') return content;
+		
+		return content.replace(
+			/!\[([^\]]*)\]\(\/img\/uploads\/([^)]+)\)/g,
+			(match, alt, imagePath) => {
+				const prefix = process.env.GITHUB_ACTIONS ? "/eleventy-base-blog" : "";
+				return `![${alt}]${prefix}/img/uploads/${imagePath})`;
+			}
+		);
 	});
 
 	eleventyConfig.addShortcode("currentBuildDate", () => {
@@ -126,7 +132,7 @@ export default async function (eleventyConfig) {
 	// Optional: Add admin folder to watch targets
 	eleventyConfig.addWatchTarget("admin/**/*");
 
-	// Add this function to handle the pathPrefix
+	// Add filter to handle image path prefixing
     eleventyConfig.addFilter("prependImagePath", (imageUrl) => {
         return process.env.GITHUB_ACTIONS 
             ? `/eleventy-base-blog${imageUrl}` 
