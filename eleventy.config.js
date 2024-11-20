@@ -96,11 +96,10 @@ export default async function (eleventyConfig) {
 			loading: "lazy",
 			decoding: "async",
 		},
-		// Add these settings
-		directories: {
-			input: "./content",
-			output: "./_site"
-		}
+		urlPath: process.env.GITHUB_ACTIONS 
+            ? "/eleventy-base-blog/img/uploads/"
+            : "/img/uploads/",
+        outputDir: "_site/img/uploads/"
 	});
 
 	// Filters
@@ -126,9 +125,17 @@ export default async function (eleventyConfig) {
 
 	// Optional: Add admin folder to watch targets
 	eleventyConfig.addWatchTarget("admin/**/*");
+
+	// Add this function to handle the pathPrefix
+    eleventyConfig.addFilter("prependImagePath", (imageUrl) => {
+        return process.env.GITHUB_ACTIONS 
+            ? `/eleventy-base-blog${imageUrl}` 
+            : imageUrl;
+    });
 };
 
 export const config = {
+	pathPrefix: process.env.GITHUB_ACTIONS ? "/eleventy-base-blog/" : "/",
 	// Control which files Eleventy will process
 	// e.g.: *.md, *.njk, *.html, *.liquid
 	templateFormats: [
