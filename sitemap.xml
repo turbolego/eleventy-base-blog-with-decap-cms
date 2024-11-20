@@ -45,4 +45,9 @@
 		<loc>https://example.com/eleventy-base-blog/feed/feed.xml</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
+	
+	<url>
+		<loc>https://example.com/eleventy-base-blog/blog/2024-11-20-test/</loc>
+		<lastmod>2024-11-20</lastmod>
+	</url>
 </urlset>
