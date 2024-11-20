@@ -20,7 +20,7 @@ export default async function (eleventyConfig) {
 		.addPassthroughCopy({
 			"./public/": "/",
 			"./admin/": "/admin/",  // Add this line to copy the admin folder
-			"./public/img/uploads": "/img/uploads"  // Add this line
+			"./public/img/uploads": "content/img/uploads"  // Add this line
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
