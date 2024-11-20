@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Update paths to use the existing public/img folder
+media_folder: "public/img/uploads"    # Physical location in the repo
+public_folder: "/img/uploads"         # URL path in the CMS and posts
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["posts"]}
+      - {label: "Body", name: "body", widget: "markdown"}

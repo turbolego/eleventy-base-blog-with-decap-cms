@@ -1,19 +1,28 @@
-import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import {HtmlBasePlugin, IdAttributePlugin, InputPathToUrlTransformPlugin} from "@11ty/eleventy";
+import {feedPlugin} from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import {eleventyImageTransformPlugin} from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-export default async function(eleventyConfig) {
+export default async function (eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
 	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
-		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+		if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
 		}
 	});
+
+	// Copy the contents of the `public` folder and admin folder to the output folder
+	eleventyConfig
+		.addPassthroughCopy({
+			"./public/": "/",
+			"./admin/": "/admin/",  // Add this line to copy the admin folder
+			"./public/img/uploads": "/img/uploads"  // Add this line
+		})
+		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -41,7 +50,7 @@ export default async function(eleventyConfig) {
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
+		preAttributes: {tabindex: 0}
 	});
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
@@ -109,6 +118,9 @@ export default async function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+	// Optional: Add admin folder to watch targets
+	eleventyConfig.addWatchTarget("admin/**/*");
 };
 
 export const config = {
