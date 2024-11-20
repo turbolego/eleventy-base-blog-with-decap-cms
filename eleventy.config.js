@@ -111,7 +111,7 @@ export default async function (eleventyConfig) {
 		return content.replace(
 			/!\[([^\]]*)\]\(\/img\/uploads\/([^)]+)\)/g,
 			(match, alt, imagePath) => {
-				const prefix = process.env.GITHUB_ACTIONS ? "/eleventy-base-blog" : "";
+				const prefix = process.env.GITHUB_ACTIONS ? "/eleventy-base-blog-with-decap-cms" : "";
 				return `![${alt}]${prefix}/img/uploads/${imagePath})`;
 			}
 		);
