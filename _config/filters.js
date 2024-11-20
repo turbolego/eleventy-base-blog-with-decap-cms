@@ -37,4 +37,26 @@ export default function(eleventyConfig) {
 		return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
 	});
 
+	// Add this new collection to generate posts consistently
+	eleventyConfig.addCollection("posts", function(collection) {
+		return collection.getFilteredByGlob("./content/blog/**/*.md")
+			.filter(post => {
+				// Exclude draft posts during build
+				return process.env.ELEVENTY_RUN_MODE !== "build" || !post.data.draft;
+			})
+			.sort((a, b) => {
+				// Sort posts by date, most recent first
+				return (b.data.date || new Date()) - (a.data.date || new Date());
+			});
+	});
+
+	// Optional: Debug filter to help diagnose collection issues
+	eleventyConfig.addFilter("debugPosts", function(collection) {
+		console.log("Debug: Total posts found", collection.length);
+		collection.forEach(post => {
+			console.log(`Post: ${post.inputPath}, Date: ${post.data.date}, Title: ${post.data.title}`);
+		});
+		return collection;
+	});
+
 };
