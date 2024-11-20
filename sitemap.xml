@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/firstpost/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/firstpost/</loc>
 		<lastmod>2018-05-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/secondpost/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/secondpost/</loc>
 		<lastmod>2018-07-04</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/thirdpost/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/thirdpost/</loc>
 		<lastmod>2018-08-24</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/fourthpost/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/fourthpost/</loc>
 		<lastmod>2018-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/2024-11-20-test/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/2024-11-20-test/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/2024-11-20-test-1/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/2024-11-20-test-1/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/2024-11-20-test-with-image/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/2024-11-20-test-with-image/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/2024-11-20-another-test-with-image/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/2024-11-20-another-test-with-image/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/about/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/about/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/blog/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/tags/</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/tags/</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/eleventy-base-blog/feed/feed.xml</loc>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/feed/feed.xml</loc>
 		<lastmod>2024-11-20</lastmod>
 	</url>
 </urlset>
