@@ -90,7 +90,7 @@ export default async function (eleventyConfig) {
 			decoding: "async",
 		},
 		urlPath: process.env.GITHUB_ACTIONS 
-			? "/eleventy-base-blog/img/uploads/"
+			? "/eleventy-base-blog-with-decap-cms/img/uploads/"
 			: "/img/uploads/",
 		outputDir: "_site/img/uploads/",
 		directories: {
@@ -135,13 +135,13 @@ export default async function (eleventyConfig) {
 	// Add filter to handle image path prefixing
     eleventyConfig.addFilter("prependImagePath", (imageUrl) => {
         return process.env.GITHUB_ACTIONS 
-            ? `/eleventy-base-blog${imageUrl}` 
+            ? `/eleventy-base-blog-with-decap-cms${imageUrl}` 
             : imageUrl;
     });
 };
 
 export const config = {
-	pathPrefix: process.env.GITHUB_ACTIONS ? "/eleventy-base-blog/" : "/",
+	pathPrefix: process.env.GITHUB_ACTIONS ? "/eleventy-base-blog-with-decap-cms/" : "/",
 	// Control which files Eleventy will process
 	// e.g.: *.md, *.njk, *.html, *.liquid
 	templateFormats: [
