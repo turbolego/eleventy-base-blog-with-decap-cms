@@ -18,7 +18,9 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-
+        with:
+          # Ensures full git history is fetched
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -35,17 +37,32 @@ jobs:
         with:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
-
-
+      
+      # Configure Git user for commit
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      
       - run: npm install
       - name: Build for GitHub Pages
         run: |
           export GITHUB_ACTIONS=true
+          export DEBUG=Eleventy*
           npm run build-ghpages
-
+        env:
+          ELEVENTY_RUN_MODE: build
+      
+      # Force add new files
+      - name: Verify and Add Files
+        run: |
+          git add content/blog/
+          git status
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          full_commit_message: Deploy new blog posts
