@@ -5,11 +5,19 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://example.com/eleventy-base-blog/feed/feed.xml" rel="self" />
   <link href="https://example.com/eleventy-base-blog/" />
-  <updated>2024-11-20T11:18:00Z</updated>
+  <updated>2024-11-20T11:21:00Z</updated>
   <id>https://example.com/eleventy-base-blog/</id>
   <author>
     <name>Your Name</name>
   </author>
+  <entry>
+    <title>test with image</title>
+    <link href="https://example.com/eleventy-base-blog/blog/2024-11-20-test-with-image/" />
+    <updated>2024-11-20T11:21:00Z</updated>
+    <id>https://example.com/eleventy-base-blog/blog/2024-11-20-test-with-image/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/eleventy-base-blog/eleventy-base-blog/img/uploads/I2TOcMLDXA-240.avif 240w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://example.com/eleventy-base-blog/eleventy-base-blog/img/uploads/I2TOcMLDXA-240.webp 240w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/eleventy-base-blog/eleventy-base-blog/img/uploads/I2TOcMLDXA-240.png&quot; alt=&quot;&quot; width=&quot;240&quot; height=&quot;240&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>test</title>
     <link href="https://example.com/eleventy-base-blog/blog/2024-11-20-test-1/" />
