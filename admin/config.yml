@@ -3,7 +3,7 @@ backend:
   branch: main
 
 # Update paths to use the existing public/img folder
-media_folder: "public/img/uploads"    # Physical location in the repo
+media_folder: "content/img/uploads"    # Physical location in the repo
 public_folder: "/img/uploads"         # URL path in the CMS and posts
 
 collections:

@@ -20,7 +20,7 @@ export default async function (eleventyConfig) {
 		.addPassthroughCopy({
 			"./public/": "/",
 			"./admin/": "/admin/",  // Add this line to copy the admin folder
-			"./public/img/uploads": "/img/uploads"  // Add this line
+			"./content/img/uploads": "/img/uploads"  // Add this line
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
@@ -95,6 +95,11 @@ export default async function (eleventyConfig) {
 			// e.g. <img loading decoding> assigned on the HTML tag will override these values.
 			loading: "lazy",
 			decoding: "async",
+		},
+		// Add these settings
+		directories: {
+			input: "./content",
+			output: "./_site"
 		}
 	});
 
