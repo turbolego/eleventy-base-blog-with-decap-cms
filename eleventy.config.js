@@ -67,7 +67,7 @@ export default async function (eleventyConfig) {
 			language: "en",
 			title: "Blog Title",
 			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			base: "https://turbolego.github.io/eleventy-base-blog-with-decap-cms/", // Updated base URL
 			author: {
 				name: "Your Name"
 			}
@@ -104,7 +104,7 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(IdAttributePlugin);
 
-	// Add filter to fix image paths in markdown content
+	// Fix image paths in markdown content
 	eleventyConfig.addFilter("fixImagePath", (content) => {
 		if (typeof content !== 'string') return content;
 		
@@ -112,7 +112,7 @@ export default async function (eleventyConfig) {
 			/!\[([^\]]*)\]\(\/img\/uploads\/([^)]+)\)/g,
 			(match, alt, imagePath) => {
 				const prefix = process.env.GITHUB_ACTIONS ? "/eleventy-base-blog-with-decap-cms" : "";
-				return `![${alt}]${prefix}/img/uploads/${imagePath})`;
+				return `![${alt}](${prefix}/img/uploads/${imagePath})`; // Fixed markdown syntax
 			}
 		);
 	});
@@ -131,12 +131,17 @@ export default async function (eleventyConfig) {
 
 	// Optional: Add admin folder to watch targets
 	eleventyConfig.addWatchTarget("admin/**/*");
-
-	// Add filter to handle image path prefixing
-    eleventyConfig.addFilter("prependImagePath", (imageUrl) => {
-        return process.env.GITHUB_ACTIONS 
-            ? `/eleventy-base-blog-with-decap-cms${imageUrl}` 
-            : imageUrl;
+	
+	// Add comprehensive URL prefix filter
+	eleventyConfig.addFilter("prependSitePrefix", (url) => {
+	if (!url) return url;
+	const prefix = process.env.GITHUB_ACTIONS ? "/eleventy-base-blog-with-decap-cms" : "";
+	
+	// Ensure URLs that start with / get the prefix
+	if (url.startsWith('/')) {
+		return `${prefix}${url}`;
+	}
+	return url;
     });
 };
 
