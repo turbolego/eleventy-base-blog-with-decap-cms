@@ -65,4 +65,9 @@
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/feed/feed.xml</loc>
 		<lastmod>2024-11-21</lastmod>
 	</url>
+	
+	<url>
+		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/2024-11-21-test-with-another-image/</loc>
+		<lastmod>2024-11-21</lastmod>
+	</url>
 </urlset>

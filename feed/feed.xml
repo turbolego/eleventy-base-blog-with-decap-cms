@@ -5,7 +5,7 @@
   <subtitle>This is a longer description about your blog.</subtitle>
   <link href="https://turbolego.github.io/eleventy-base-blog-with-decap-cms/feed/feed.xml" rel="self" />
   <link href="https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/" />
-  <updated>2024-11-20T11:23:00Z</updated>
+  <updated>2024-11-21T09:07:00Z</updated>
   <id>https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/</id>
   <author>
     <name>Your Name</name>
@@ -95,6 +95,7 @@ console.log(&#39;Test&#39;);
     <id>https://turbolego.github.io/eleventy-base-blog-with-decap-cms/blog/2024-11-20-test/</id>
     <content type="html">&lt;p&gt;just a test&lt;/p&gt;
 &lt;h2 id=&quot;blog-posts-debug&quot;&gt;Blog Posts Debug&lt;/h2&gt;
+  &lt;p&gt;test with another image - Thu Nov 21 2024 09:07:00 GMT+0000 (Coordinated Universal Time)&lt;/p&gt;
   &lt;p&gt;another test with image - Wed Nov 20 2024 11:23:00 GMT+0000 (Coordinated Universal Time)&lt;/p&gt;
   &lt;p&gt;test with image - Wed Nov 20 2024 11:21:00 GMT+0000 (Coordinated Universal Time)&lt;/p&gt;
   &lt;p&gt;test - Wed Nov 20 2024 11:18:00 GMT+0000 (Coordinated Universal Time)&lt;/p&gt;
@@ -128,6 +129,15 @@ console.log(&#39;Test&#39;);
     <id>https://turbolego.github.io/eleventy-base-blog-with-decap-cms/blog/2024-11-20-another-test-with-image/</id>
     <content type="html">&lt;p&gt;weee&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/Zz9coiUgJQ-3885.avif 3885w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/Zz9coiUgJQ-3885.webp 3885w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/Zz9coiUgJQ-3885.png&quot; alt=&quot;&quot; width=&quot;3885&quot; height=&quot;3885&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>test with another image</title>
+    <link href="https://turbolego.github.io/eleventy-base-blog-with-decap-cms/blog/2024-11-21-test-with-another-image/" />
+    <updated>2024-11-21T09:07:00Z</updated>
+    <id>https://turbolego.github.io/eleventy-base-blog-with-decap-cms/blog/2024-11-21-test-with-another-image/</id>
+    <content type="html">&lt;p&gt;testy test&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/X5Tv3QFfIu-148.avif 148w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/X5Tv3QFfIu-148.webp 148w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://turbolego.github.io/eleventy-base-blog-with-decap-cms/eleventy-base-blog-with-decap-cms/img/uploads/X5Tv3QFfIu-148.png&quot; alt=&quot;&quot; width=&quot;148&quot; height=&quot;104&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>
