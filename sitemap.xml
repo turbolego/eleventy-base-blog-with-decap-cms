@@ -43,26 +43,26 @@
 	
 	<url>
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/about/</loc>
-		<lastmod>2024-11-20</lastmod>
+		<lastmod>2024-11-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/blog/</loc>
-		<lastmod>2024-11-20</lastmod>
+		<lastmod>2024-11-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/</loc>
-		<lastmod>2024-11-20</lastmod>
+		<lastmod>2024-11-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/tags/</loc>
-		<lastmod>2024-11-20</lastmod>
+		<lastmod>2024-11-21</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://example.com/eleventy-base-blog-with-decap-cms/feed/feed.xml</loc>
-		<lastmod>2024-11-20</lastmod>
+		<lastmod>2024-11-21</lastmod>
 	</url>
 </urlset>
