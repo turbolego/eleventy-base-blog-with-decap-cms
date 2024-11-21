@@ -6,6 +6,8 @@ backend:
 media_folder: "public/img/uploads"      # Where files will be stored in the repo
 public_folder: "/img/uploads"           # The src attribute for uploaded media
 
+publish_mode: editorial_workflow
+
 collections:
   - name: "blog"
     label: "Blog"
